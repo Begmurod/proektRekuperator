@@ -2,9 +2,170 @@
     ViewData["Title"] = "Home Page";
 }
 
+
 <div class="text-center">
-    <h1 class="display-4"> <a href="http://www.stroitelstvo-new.ru/steklo/recuperator.shtml" target="_blank">Рекуператор</a></h1>
-    @*<p>Узнать о <a href="http://www.stroitelstvo-new.ru/steklo/recuperator.shtml">Рекуператоре</a>.
-    </p>*@
+    <h2 class="display-4"><b>Исходные данные</b></h2>
+    <form action="/Home/ResultData">
+        <table border="1" align="center" valign="bottom">
+
+            <tr>
+                <td bgcolor="#ffcc00"><h3>Название</h3></td>
+                <td bgcolor="#ffcc00"><h3>Значение</h3></td>
+                <td bgcolor="#ffcc00"><h3>Измерение</h3></td>
+            </tr>
+            <tr>
+                <td>Расход топлива на печь</td>
+                <td><input type="number" min="0.2" max="50" step="any" name="data.B" value="9.335" /></td>
+                <td>м<sup><small>3</small></sup>/с</td>
+            </tr>
+            <tr>
+                <td>Коэффицент избыточного воздуха</td>
+                <td><input type="number" min="0.2" max="50" step="any" name="data.ALFA" value="1.05" /></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Реальный расход воздуха</td>
+                <td><input type="number" min="0.2" max="50" step="any" name="data.LALFA" value="1.54" /></td>
+                <td>м<sup><small>3</small></sup>/м<sup><small>3</small></sup></td>
+            </tr>
+            <tr>
+                <td>Навзание параметра VALFA</td>
+                <td><input type="number" min="0.2" max="50" step="any" name="data.VALFA" value="2.37" /></td>
+                <td>м<sup><small>3</small></sup>/м<sup><small>3</small></sup></td>
+            </tr>
+            <tr>
+                <td>Реальный объем расход воздуха</td>
+                <td><input type="number" min="0.2" max="50" step="any" name="data.VL" value="3" /></td>
+                <td>%</td>
+            </tr>
+            <tr>
+                <td>Температура продуктов горения уходящих из печи</td>
+                <td><input type="number" min="0.2" max="5000" step="any" name="data.TRO" value="1070" /></td>
+                <td><sup><small>0</small></sup>C</td>
+            </tr>
+            <tr>
+                <td>Среднеквадратическое отклонение температуры</td>
+                <td><input type="number" min="0.2" max="50" step="any" name="data.BETTAT" value="1" /></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Средная теплоемкость воздуха и газообразных видов топлива</td>
+                <td><input type="number" min="0.2" max="50" step="any" name="data.CV1" value="1.29" /></td>
+                <td>кДж/м<sup><small>3</small></sup></td>
+            </tr>
+            <tr>
+                <td>Начальная температура подающего воздуха в рекуператор</td>
+                <td><input type="number" min="0.2" max="500" step="any" name="data.TV1" value="20" /></td>
+                <td><sup><small>0</small></sup>C</td>
+            </tr>
+            <tr>
+                <td>Средная теплоемкость воздуха и газообразных видов топлива </td>
+                <td><input type="number" min="0.2" max="50" step="any" name="data.CV2" value="1.34" /></td>
+                <td>кДж/м<sup><small>3</small></sup></td>
+            </tr>
+            <tr>
+                <td>Конечная температура подающего воздуха в рекуператор</td>
+                <td><input type="number" min="0.2" max="5000" step="any" name="data.TV2" value="500" /></td>
+                <td><sup><small>0</small></sup>C</td>
+            </tr>
+            <tr>
+                <td>Коэффицент учитывающий потери топлива </td>
+                <td><input type="number" min="0.2" max="50" step="any" name="data.ETA" value="0.9" /></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Начальная температура подающего дыма в рекуператор</td>
+                <td><input type="number" step="any" name="data.TD1" value="1070" /></td>
+                <td><sup><small>0</small></sup>C</td>
+            </tr>
+            <tr>
+                <td>Конечная температура подающего дыма в рекуператор</td>
+                <td><input type="number" min="0.2" max="2500" step="any" name="data.TD2" value="765" /></td>
+                <td><sup><small>0</small></sup>C</td>
+            </tr>
+            <tr>
+                <td>Попровочный множетель</td>
+                <td><input type="number" min="0.1" max="50" step="any" name="data.KSIDELTAT" value="0.98" /></td>
+                <td><sup><small>0</small></sup>C</td>
+            </tr>
+            <tr>
+                <td>Число блоков по ширине печи </td>
+                <td><input type="number" min="1" max="5000" step="any" name="data.Z1" value="24" /></td>
+                <td>шт.</td>
+            </tr>
+            <tr>
+                <td>Число блоков по высоте печи </td>
+                <td><input type="number" min="1" max="5000" step="any" name="data.Z2" value="20" /></td>
+                <td>шт.</td>
+            </tr>
+            <tr>
+                <td>Число блоков по длине печи </td>
+                <td><input type="number" min="1" max="5000" step="any" name="data.Z3" value="30" /></td>
+                <td>шт.</td>
+            </tr>
+            <tr>
+                <td>Число ходов по дыму </td>
+                <td><input type="number" min="1" max="500" step="any" name="data.ETAD" value="2" /></td>
+                <td>шт.</td>
+            </tr>
+            <tr>
+                <td>Число ходов по воздуху </td>
+                <td><input type="number" min="1" max="500" step="any" name="data.ETAV" value="1" /></td>
+                <td>шт.</td>
+            </tr>
+            <tr>
+                <td>Эквивалентный диаметр дымовых каналов </td>
+                <td><input type="number" step="any" name="data.DDDK" value="0.158" /></td>
+                <td>м</td>
+            </tr>
+            <tr>
+                <td>Коэффициент теплоотдачи излучением  </td>
+                <td><input type="number" min="1" max="500" step="any" name="data.ALFADL1" value="23" /></td>
+                <td>Вт/м<sup><small>3</small></sup></td>
+            </tr>
+            <tr>
+                <td>Поправочный коэффицент </td>
+                <td><input type="number" step="any" name="data.KT" value="0.91" /></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Эквивалентный диаметр воздушных каналов </td>
+                <td><input type="number" step="any" name="data.DDVK" value="0.0565" /></td>
+                <td>м</td>
+            </tr>
+            <tr>
+                <td>Толщина стенки выполненного из шмота </td>
+                <td><input type="number" step="any" name="data.S" value="0.02" /></td>
+                <td>м</td>
+            </tr>
+            <tr>
+                <td>Размер блока </td>
+                <td><input type="number" step="any" name="data.FIBL" value="0.161" /></td>
+                <td>м</td>
+            </tr>
+
+        </table>
+
+        <div style="text-align: right;
+                margin-left:-15%;
+                width: 100%;
+                padding:5%">
+            <button class="btn btn-primary" type="submit" data-toggle="modal" data-target="#exampleModal"><h5>Вычислить результать</h5></button>
+            <button class="btn btn-warning" type="reset"> <h5>Очистить таблицу</h5></button>
+
+            <a class="btn btn-primary" href="https://localhost:5001/spravka.pdf" type="button" target="_blank"><h5>Справка</h5></a>
+
+            <a class="btn btn-primary" href="https://localhost:5001/%D0%A0%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B-%D0%BA%D0%BE%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD.pdf" type="button" target="_blank"><h5>Рекуператор </h5></a>
+
+
+        </div>
+    </form>
+
 </div>
+
+
+
+
+
+
 

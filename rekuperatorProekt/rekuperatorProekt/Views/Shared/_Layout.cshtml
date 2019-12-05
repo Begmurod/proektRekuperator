@@ -13,8 +13,16 @@
     <script src="~/js/Chart.bundle.min.js" asp-append-version="true"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
+    <link rel="stylesheet" href="http://bootstraptema.ru/plugins/2016/b-pdf-viewer/bootstrap-pdf-viewer.css" />
+    <link rel="stylesheet" href="http://bootstraptema.ru/plugins/2016/b-pdf-viewer/bootstrap-pdf-form-viewer.css" />
+    <link rel="stylesheet" href="http://bootstraptema.ru/plugins/2016/b-pdf-viewer/bootstrap-pdf-form-builder.css" />
+    <script src="http://bootstraptema.ru/plugins/2016/b-pdf-viewer/bootstrap-pdf-viewer.js"></script>
+    <script src="http://bootstraptema.ru/plugins/2016/b-pdf-viewer/bootstrap-pdf-form-viewer.js"></script>
+    <script src="http://bootstraptema.ru/plugins/2016/b-pdf-viewer/bootstrap-pdf-form-common.js"></script>
+    <script src="http://bootstraptema.ru/plugins/2016/b-pdf-viewer/bootstrap-pdf-form-builder.js"></script>
 
-   
+
+
 </head>
 <body>
     <header>
@@ -33,9 +41,9 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                             </li>*@
-                        <li class="nav-item">
+                        @*<li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="InputData">Исходные данные</a>
-                        </li>
+                        </li>*@
                         
                     </ul>
                 </div>
@@ -50,7 +58,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2019 - Расчет керамического рекуператора  <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2019 - Расчет керамического рекуператора  <a asp-area="" asp-controller="Home" asp-action="Index">Главное меню</a>
 
         </div>
     </footer>

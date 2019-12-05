@@ -20,6 +20,7 @@ namespace rekuperatorProekt.Controllers
 
         public IActionResult Index()
         {
+            
             return View();
         }
 
@@ -27,10 +28,7 @@ namespace rekuperatorProekt.Controllers
         {
             return View();
         }
-        public IActionResult InputData()
-        {
-            return View();
-        }
+      
       
         public IActionResult ResultData(Model data)
         {
