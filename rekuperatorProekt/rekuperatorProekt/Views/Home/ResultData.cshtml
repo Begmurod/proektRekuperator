@@ -1,0 +1,186 @@
+﻿@model ResultModel
+
+@{
+   
+    ViewData["Title"] = "Результат расчета";
+}
+    
+    <div class="alert alert-warning">
+        <strong>Внимание!</strong>Оптимальное значение для "Конечная температура подающего воздуха в рекуператор" является:@Model.TV2 <sup><small>0</small></sup>C.
+    </div>
+
+    <div class="text-center">
+        <h1 class="display-4"><b>Результат расчета</b></h1>
+        <form action="/Home/GraResultData">
+            <table border="1" align="center">
+                <tr>
+                    <td bgcolor="#ffcc00"><h3>Название</h3></td>
+                    <td bgcolor="#ffcc00"><h3>Значение</h3></td>
+                    <td bgcolor="#ffcc00"><h3>Измерение</h3></td>
+                </tr>
+                <tr>
+                    <td>Количество воздухапоступающее в рекуператор</td>
+                    <td bgcolor="#48a36d">@Model.VB1 </td>
+                    <td>м<sup><small>3</small></sup>/с</td>
+                </tr>
+                <tr>
+                    <td>Количество прососанного в рекуператор воздуха</td>
+                    <td bgcolor="#48a36d">@Model.VBPR</td>
+                    <td>м<sup><small>3</small></sup>/с</td>
+                </tr>
+                <tr>
+                    <td>Количетво продуктов горения перед рекуператором</td>
+                    <td bgcolor="#48a36d"> @Model.VD1</td>
+                    <td>м<sup><small>3</small></sup>/с</td>
+                </tr>
+                <tr>
+                    <td>Теплосодержание дыма перед рекуператором</td>
+                    <td bgcolor="#48a36d">@Model.ID1</td>
+                    <td>кДж/м<sup><small>3</small></sup></td>
+                </tr>
+                <tr>
+                    <td>Теплосодержание воздуха до рекуператора</td>
+                    <td bgcolor="#48a36d">@Model.IV1</td>
+                    <td>кДж/м<sup><small>3</small></sup></td>
+                </tr>
+                <tr>
+                    <td>Теплосодержание воздуха после рекуператора</td>
+                    <td bgcolor="#48a36d"> @Model.IV2</td>
+                    <td>кДж/м<sup><small>3</small></sup></td>
+                </tr>
+                <tr>
+                    <td>Теплосодержание дыма за рекуператором</td>
+                    <td bgcolor="#48a36d">@Model.ID2</td>
+                    <td>кДж/м<sup><small>3</small></sup></td>
+                </tr>
+                <tr>
+                    <td>Средно логорифмический разность температур</td>
+                    <td bgcolor="#48a36d">@Model.DELTAT1</td>
+                    <td><sup><small>0</small></sup>С</td>
+                </tr>
+                <tr>
+                    <td>Результат P</td>
+                    <td bgcolor="#48a36d">@Model.P</td>
+                    <td>м<sup><small>3</small></sup>/с</td>
+                </tr>
+                <tr>
+                    <td>Результат R</td>
+                    <td bgcolor="#48a36d">@Model.R</td>
+                    <td>м<sup><small>3</small></sup>/с</td>
+                </tr>
+                <tr>
+                    <td>Действительная средне логорифмическая разность температур</td>
+                    <td bgcolor="#48a36d">@Model.DELTAT</td>
+                    <td><sup><small>0</small></sup>С</td>
+                </tr>
+                <tr>
+                    <td>Общое число блоков</td>
+                    <td bgcolor="#48a36d">@Model.ZCUMMA</td>
+                    <td>шт.</td>
+                </tr>
+                <tr>
+                    <td>Скорость дыма в рекуператоре</td>
+                    <td bgcolor="#48a36d"> @Model.WOD</td>
+                    <td>м/с</td>
+                </tr>
+                <tr>
+                    <td>Скорость воздуха в рекуператоре</td>
+                    <td bgcolor="#48a36d">@Model.WOV</td>
+                    <td>м/с</td>
+                </tr>
+                <tr>
+                    <td>Cредняя температура дыма в рекуператоре</td>
+                    <td bgcolor="#48a36d">@Model.TD</td>
+                    <td><sup><small>0</small></sup>С</td>
+                </tr>
+                <tr>
+                    <td>Коэффицент конвективного теплообмена</td>
+                    <td bgcolor="#48a36d">@Model.ALFADK</td>
+                    <td>Вт/м<sup><small>2</small></sup>*град.</td>
+                </tr>
+                <tr>
+                    <td>Коэффицент истегного значения</td>
+                    <td bgcolor="#48a36d">@Model.ALFADL</td>
+                    <td>Вт/м<sup><small>2</small></sup>*град.</td>
+                </tr>
+                <tr>
+                    <td>Средняя температура воздуха в рекуператоре</td>
+                    <td bgcolor="#48a36d">@Model.TV</td>
+                    <td><sup><small>0</small></sup>С</td>
+                </tr>
+                <tr>
+                    <td>Средняя температура стенки</td>
+                    <td bgcolor="#48a36d">@Model.TCT</td>
+                    <td><sup><small>0</small></sup>С</td>
+                </tr>
+                <tr>
+                    <td>Средняя температура воздуха в пограничном слое</td>
+                    <td bgcolor="#48a36d">@Model.TVPG1</td>
+                    <td><sup><small>0</small></sup>С</td>
+                </tr>
+                <tr>
+                    <td>Температурный напор</td>
+                    <td bgcolor="#48a36d">@Model.DELTATNAP</td>
+                    <td><sup><small>0</small></sup>С</td>
+                </tr>
+                <tr>
+                    <td>Коэффицент теплоотдачи от стенки к воздуху</td>
+                    <td bgcolor="#48a36d">@Model.ALFAV</td>
+                    <td>Вт/м<sup><small>2</small></sup>*град.</td>
+                </tr>
+                <tr>
+                    <td>Коэффицент теплопроводности материала</td>
+                    <td bgcolor="#48a36d">@Model.lSH</td>
+                    <td>Вт/м<sup><small>2</small></sup>*град.</td>
+                </tr>
+                <tr>
+                    <td>Коэффицент теплоотдачи от дыма к стенки рекуператора </td>
+                    <td bgcolor="#48a36d">@Model.ALFAD</td>
+                    <td>Вт/м<sup><small>2</small></sup>*град.</td>
+                </tr>
+
+                <tr>
+                    <td>Коэффицент теплоотдачи в рекуператоре</td>
+                    <td bgcolor="#48a36d"> @Model.K</td>
+                    <td>Вт/м<sup><small>2</small></sup>*град.</td>
+                </tr>
+                <tr>
+                    <td>Количество теплоты передоваемая воздуху в рекуператоре </td>
+                    <td bgcolor="#48a36d"> @Model.QV</td>
+                    <td>Вт</td>
+                </tr>
+                <tr>
+                    <td>Поверхность нагрева </td>
+                    <td bgcolor="#48a36d"> @Model.F</td>
+                    <td>м<sup><small>2</small></sup></td>
+                </tr>
+                <tr>
+                    <td>Поверхность рекуператора  </td>
+                    <td bgcolor="#48a36d"> @Model.F1</td>
+                    <td>м<sup><small>2</small></sup></td>
+                </tr>
+                @*<tr>
+                    <td>Разность между Поверхности нагрева и Поверхность рекуператора </td>
+                    <td bgcolor="#48a36d"> @Model.FRaz</td>
+                    <td>м<sup><small>2</small></sup></td>
+                </tr>
+                <tr>
+                    <td>Разность между Поверхности нагрева и Поверхность рекуператора </td>
+                    <td bgcolor="#48a36d"> @Model.TV2</td>
+                    <td>м<sup><small>2</small></sup></td>
+                </tr>*@
+            </table>
+
+            <div style="text-align: right;
+            margin-left: 30%;
+            width: 40%;
+            padding:1%">
+                @*<input type="submit" value="Отчет" />*@
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Построить График</button>
+
+            </div>
+
+        </form>
+
+       
+    </div>
