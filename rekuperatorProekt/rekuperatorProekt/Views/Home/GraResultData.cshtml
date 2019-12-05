@@ -1,14 +1,14 @@
 ﻿
 @{
-    ViewData["Title"] = "Отчет";
+    ViewData["Title"] = "График";
 }
 
 <div class="text-center">
-    <h1 class="display-4"><b>График</b></h1>
+    <h2 class="display-4"><b>График зависимости Количество продуктов горения перед рекуператором от Расхода топлива на печь</b></h2>
 
 </div>
 
-<canvas id="myChart" width="400" height="150"></canvas>
+<canvas id="myChart" width="400" height="200"></canvas>
 
 <script>
     var ctx = document.getElementById('myChart');
@@ -20,7 +20,7 @@
     var data = {
         labels: @Json.Serialize(ViewBag.x),
         datasets: [{
-            label: "Stock A",
+            label: "",
             fill: false,
             lineTension: 0.1,
             backgroundColor: "rgba(225,0,0,0.4)",
@@ -55,7 +55,7 @@
                 },
                 scaleLabel: {
                     display: true,
-                    labelString:    'Количество продуктов горения перед рекуператором',
+                    labelString:'Количество продуктов горения перед рекуператором',
                     fontSize: 20
                 }
             }],

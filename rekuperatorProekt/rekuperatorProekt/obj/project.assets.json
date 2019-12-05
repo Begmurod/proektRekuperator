@@ -711,11 +711,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\proektRekuperator-master\\rekuperatorProekt\\rekuperatorProekt\\rekuperatorProekt.csproj",
+      "projectUniqueName": "H:\\proektRekuperator\\rekuperatorProekt\\rekuperatorProekt\\rekuperatorProekt.csproj",
       "projectName": "rekuperatorProekt",
-      "projectPath": "H:\\proektRekuperator-master\\rekuperatorProekt\\rekuperatorProekt\\rekuperatorProekt.csproj",
+      "projectPath": "H:\\proektRekuperator\\rekuperatorProekt\\rekuperatorProekt\\rekuperatorProekt.csproj",
       "packagesPath": "C:\\Users\\Бек\\.nuget\\packages\\",
-      "outputPath": "H:\\proektRekuperator-master\\rekuperatorProekt\\rekuperatorProekt\\obj\\",
+      "outputPath": "H:\\proektRekuperator\\rekuperatorProekt\\rekuperatorProekt\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
